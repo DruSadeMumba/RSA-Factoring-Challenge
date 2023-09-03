@@ -1,3 +1,2 @@
-#!/bin/bash
+#!/usr/bin/bash
 gcc factors.c -o prime && ./prime "$@"
-
