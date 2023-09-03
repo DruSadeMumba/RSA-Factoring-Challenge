@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	while(fgets(buffer, sizeof(buffer), file))
+	while (fgets(buffer, sizeof(buffer), file))
 	{
 		num = atoll(buffer);
 		factorize(num);
