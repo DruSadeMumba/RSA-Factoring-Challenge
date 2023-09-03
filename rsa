@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-gcc factors.c -o prime && ./prime "$@"
+gcc rsa.c -o prime && ./prime "$@"
