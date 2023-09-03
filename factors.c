@@ -5,20 +5,20 @@
  * factorize - find factors of int
  * @n: input int
  */
-void factorize(long long n)
+void factorize(unsigned long long n)
 {
-	long long i = 2;
+	unsigned long long i = 2;
 
 	while (i * i <= n)
 	{
 		if (n % i == 0)
 		{
-			printf("%lld=%lld*%lld\n", n, n / i, i);
+			printf("%llu=%llu*%llu\n", n, n / i, i);
 			return;
 		}
 		i++;
 	}
-	printf("%lld=1*%lld\n", n, n);
+	printf("%llu=1*%llu\n", n, n);
 }
 
 /**
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 {
 	FILE *file = fopen(argv[1], "r");
 	char buffer[256];
-	long long num;
+	unsigned long long num;
 
 	if (argc != 2)
 	{
