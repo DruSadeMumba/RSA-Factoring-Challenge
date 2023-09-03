@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
 	if (!file)
 	{
-		perror("Error opening the file\n");
+		fprintf(stderr, "Error: can't open file %s\n", argv[1]);
 		return (1);
 	}
 
