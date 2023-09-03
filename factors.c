@@ -30,7 +30,7 @@ void factorize(long long n)
 int main(int argc, char *argv[])
 {
 	FILE *file = fopen(argv[1], "r");
-	char buffer[256], data;
+	char buffer[256];
 	long long num;
 
 	if (argc != 2)
@@ -45,8 +45,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	data = fgets(buffer, sizeof(buffer), file);
-	while (data)
+	while(fgets(buffer, sizeof(buffer), file))
 	{
 		num = atoll(buffer);
 		factorize(num);
