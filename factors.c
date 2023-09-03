@@ -18,7 +18,6 @@ void factorize(unsigned long long n)
 		}
 		i++;
 	}
-	printf("%llu=1*%llu\n", n, n);
 }
 
 /**
@@ -36,7 +35,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: %s <file>\n", argv[0]);
-		return (1);
+		exit(EXIT_FAILURE);
 	}
 
 	if (!file)

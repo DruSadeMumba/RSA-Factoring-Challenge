@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-gcc factors.c -o prime && ./prime $1
+gcc factors.c -o prime && ./prime
