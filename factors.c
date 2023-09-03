@@ -7,13 +7,13 @@
  */
 void factorize(unsigned long long n)
 {
-	unsigned long long i = 2;
+	long long i = 2;
 
-	while (i * i <= n)
+	while (i * i <= n && n > 1)
 	{
 		if (n % i == 0)
 		{
-			printf("%llu=%llu*%llu\n", n, n / i, i);
+			printf("%lld=%lld*%lld\n", n, n / i, i);
 			return;
 		}
 		i++;
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 {
 	FILE *file = fopen(argv[1], "r");
 	char buffer[256];
-	unsigned long long num;
+	long long num;
 
 	if (argc != 2)
 	{
@@ -47,13 +47,10 @@ int main(int argc, char *argv[])
 	while (fgets(buffer, sizeof(buffer), file))
 	{
 		num = atoll(buffer);
-		if (num > 0)
+		if (num > 1)
 			factorize(num);
 		else
-		{
-			fprintf(stderr, "Please input numbers > 0\n");
-			exit(EXIT_FAILURE);
-		}
+			fprintf(stderr, "no prime factors for num: %lld(less than 2)\n", num);
 	}
 
 	fclose(file);
