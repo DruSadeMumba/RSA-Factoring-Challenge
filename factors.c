@@ -47,7 +47,13 @@ int main(int argc, char *argv[])
 	while (fgets(buffer, sizeof(buffer), file))
 	{
 		num = atoll(buffer);
-		factorize(num);
+		if (num > 0)
+			factorize(num);
+		else
+		{
+			fprintf(stderr, "Please input numbers > 0\n");
+			exit(EXIT_FAILURE);
+		}
 	}
 
 	fclose(file);
